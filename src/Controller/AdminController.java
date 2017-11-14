@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 
+import DAO.FuncionarioDAO;
 import DAO.UsuarioDAO;
+import Model.Funcionario;
 import Model.Usuario;
 import View.Login;
 import View.TelaAdmin;
@@ -31,14 +33,23 @@ public class AdminController  implements ActionListener{
 	
 	public void preencheLista() {
 		UsuarioDAO userDAO = new UsuarioDAO();
+		FuncionarioDAO funcDAO = new FuncionarioDAO();
+		
 		ArrayList<Usuario> usuarios = userDAO.getAllUsers();
-		DefaultListModel lista = new DefaultListModel();
+		ArrayList<Funcionario> funcionarios = funcDAO.getAllFunc();
+				
+		DefaultListModel listaUser = new DefaultListModel();
+		DefaultListModel listaFunc = new DefaultListModel();
 		
 		for(Usuario user: usuarios) {
-			lista.addElement(user.getNome());
+			listaUser.addElement(user.getNome());
 		}
 		
-		telaAdmin.getListClientes().setModel(lista);
+		for(Funcionario func: funcionarios) {
+			listaFunc.addElement(func.getNome());
+		}
+		telaAdmin.getListClientes().setModel(listaUser);
+		telaAdmin.getListFunc().setModel(listaFunc);
 		
 	}
 
