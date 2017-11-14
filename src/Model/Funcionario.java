@@ -2,10 +2,12 @@ package Model;
 
 public class Funcionario {
 	
+	private int id;
 	private String nome;
 	private String senha;
 	private String telefone;
 	private String cpf;
+	private String endereco;
 	
 	public String getNome() {
 		return nome;
@@ -31,5 +33,19 @@ public class Funcionario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 	
 }

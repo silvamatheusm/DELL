@@ -4,11 +4,17 @@ import java.util.ArrayList;
 
 public class Usuario {
 
+	private int id;
 	private String nome;
 	private String telefone;
 	private String senha;
 	private String cpf;
-	private ArrayList<Produto> produtos;
+	private String endereco;
+	private ArrayList<Produto> produtos = new ArrayList();
+	
+	public void adicionaCarrinho(Produto produto) {
+		produtos.add(produto);
+	}
 	
 	public String getNome() {
 		return nome;
@@ -17,7 +23,7 @@ public class Usuario {
 		this.nome = nome;
 	}
 	public String getTelefone() {
-		return telefone;
+		return telefone; 
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
@@ -39,6 +45,18 @@ public class Usuario {
 	}
 	public void setProdutos(ArrayList<Produto> produtos) {
 		this.produtos = produtos;
+	}
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

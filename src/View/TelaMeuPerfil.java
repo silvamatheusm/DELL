@@ -1,32 +1,32 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Controller.CadastrarController;
+import Controller.MeuPerfilController;
 
-import java.awt.Font;
-import javax.swing.JRadioButton;
+import java.awt.BorderLayout;
 import java.awt.SystemColor;
-import javax.swing.JButton;
+import java.awt.Toolkit;
 
-public class TelaCadastro {
+public class TelaMeuPerfil {
 
 	private JFrame frame;
 	private JTextField textFieldNome;
 	private JTextField textFieldEndereco;
 	private JTextField textFieldTel;
 	private JTextField textFieldCpf;
-	private JRadioButton rdbtnCliente ;
-	private JRadioButton rdbtnFuncionario ;
-	private CadastrarController cadastrarController;
 	private JTextField textFieldSenha;
+	private MeuPerfilController meuPerfilController;
 
 	/**
 	 * Launch the application.
@@ -35,7 +35,7 @@ public class TelaCadastro {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaCadastro window = new TelaCadastro();
+					TelaMeuPerfil window = new TelaMeuPerfil();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class TelaCadastro {
 	/**
 	 * Create the application.
 	 */
-	public TelaCadastro() {
+	public TelaMeuPerfil() {
 		initialize();
 	}
 
@@ -56,9 +56,10 @@ public class TelaCadastro {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 683, 419);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaMeuPerfil.class.getResource("/images/logo.png")));
+		frame.setBounds(100, 100, 742, 430);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		cadastrarController = new CadastrarController(this);
+		meuPerfilController = new MeuPerfilController(this);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaption);
@@ -101,43 +102,35 @@ public class TelaCadastro {
 		textFieldCpf.setBounds(255, 217, 238, 20);
 		panel.add(textFieldCpf);
 
-		JLabel lblPreenchaAsInformaes = new JLabel("Preencha as informa\u00E7\u00F5es abaixo para cadastrar");
+		JLabel lblPreenchaAsInformaes = new JLabel("Preencha as informa\u00E7\u00F5es abaixo para editar");
 		lblPreenchaAsInformaes.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblPreenchaAsInformaes.setBounds(159, 76, 373, 14);
 		panel.add(lblPreenchaAsInformaes);
 
-		rdbtnFuncionario = new JRadioButton("Funcionario");
-		rdbtnFuncionario.setBounds(245, 258, 109, 23);
-		panel.add(rdbtnFuncionario);
-
-		rdbtnCliente = new JRadioButton("Cliente");
-		rdbtnCliente.setBounds(384, 258, 109, 23);
-		panel.add(rdbtnCliente);
-
 		ButtonGroup grupo1 =  new ButtonGroup();
-		grupo1.add(rdbtnCliente);
-		grupo1.add(rdbtnFuncionario);
 
-		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setBounds(245, 301, 109, 23);
-		panel.add(btnCadastrar);
-		btnCadastrar.setActionCommand("Cadastrar");
-		btnCadastrar.addActionListener(cadastrarController);
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.setBounds(213, 265, 109, 23);
+		panel.add(btnEditar);
+		btnEditar.addActionListener(meuPerfilController);
+		btnEditar.setActionCommand("Editar");
 
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(386, 301, 107, 23);
+		btnVoltar.setBounds(345, 265, 107, 23);
 		panel.add(btnVoltar);
-		btnVoltar.addActionListener(cadastrarController);
+		btnVoltar.addActionListener(meuPerfilController);
 		btnVoltar.setActionCommand("Voltar");
-		
+
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBounds(159, 145, 76, 14);
 		panel.add(lblSenha);
-		
+
 		textFieldSenha = new JTextField();
 		textFieldSenha.setColumns(10);
 		textFieldSenha.setBounds(255, 142, 238, 20);
 		panel.add(textFieldSenha);
+		
+		meuPerfilController.inicializaTela();
 	}
 
 	public JFrame getFrame() {
@@ -159,20 +152,12 @@ public class TelaCadastro {
 	public JTextField getTextFieldCpf() {
 		return textFieldCpf;
 	}
-	
-	
 
 	public JTextField getTextFieldSenha() {
 		return textFieldSenha;
 	}
 
-	public JRadioButton getRdbtnCliente() {
-		return rdbtnCliente;
-	}
 
-	public JRadioButton getRdbtnFuncionario() {
-		return rdbtnFuncionario;
-	}
-	
-	
+
+
 }
