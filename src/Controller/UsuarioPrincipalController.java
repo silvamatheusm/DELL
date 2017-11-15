@@ -12,10 +12,10 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import DAO.ProdutoDAO;
 import Model.Produto;
+import Model.ProdutoDAO;
+import Model.Session;
 import Model.Usuario;
-import Util.Session;
 import View.Login;
 import View.TelaDetalhes;
 import View.TelaFinalizar;

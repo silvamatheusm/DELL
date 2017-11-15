@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Model.Produto;
-import Util.Session;
+import Model.Session;
 import View.TelaDetalhes;
 
 public class DetalhesController  implements ActionListener{

@@ -9,12 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import DAO.FuncionarioDAO;
-import DAO.ProdutoDAO;
-import DAO.UsuarioDAO;
+import Model.FuncionarioDAO;
 import Model.Produto;
+import Model.ProdutoDAO;
+import Model.Session;
 import Model.Usuario;
-import Util.Session;
+import Model.UsuarioDAO;
 import View.Login;
 import View.TelaFuncionario;
 

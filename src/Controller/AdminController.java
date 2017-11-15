@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 
-import DAO.FuncionarioDAO;
-import DAO.UsuarioDAO;
 import Model.Funcionario;
+import Model.FuncionarioDAO;
 import Model.Usuario;
+import Model.UsuarioDAO;
 import View.Login;
 import View.TelaAdmin;
 

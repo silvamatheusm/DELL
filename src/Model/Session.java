@@ -1,10 +1,6 @@
-package Util;
+package Model;
 
 import java.util.ArrayList;
-
-import Model.Funcionario;
-import Model.Produto;
-import Model.Usuario;
 
 public class Session {
 

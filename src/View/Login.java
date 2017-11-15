@@ -95,6 +95,8 @@ public class Login {
 		textFieldSenha.setColumns(10);
 		textFieldSenha.setBounds(190, 139, 86, 20);
 		panel.add(textFieldSenha);
+		textFieldSenha.addActionListener(loginController);
+		textFieldSenha.setActionCommand("Enter");
 
 		rdbFuncionario = new JRadioButton("Funcion\u00E1rio");
 		rdbFuncionario.setBounds(144, 164, 132, 23);
@@ -103,7 +105,7 @@ public class Login {
 		rdbCliente = new JRadioButton("Cliente");
 		rdbCliente.setBounds(144, 190, 132, 23);
 		panel.add(rdbCliente);
-
+	
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setForeground(Color.WHITE);
 		btnEntrar.setBackground(Color.BLUE);
@@ -128,6 +130,12 @@ public class Login {
 		panel.add(btnCadastrar);
 		btnCadastrar.addActionListener(loginController);
 		btnCadastrar.setActionCommand("Cadastrar");
+		
+		JButton btnAjuda = new JButton("Ajuda");
+		btnAjuda.setBounds(321, 0, 89, 23);
+		panel.add(btnAjuda);
+		btnAjuda.addActionListener(loginController);
+		btnAjuda.setActionCommand("Ajuda");
 		
 	}
 

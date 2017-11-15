@@ -12,10 +12,10 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
-import DAO.FuncionarioDAO;
-import DAO.UsuarioDAO;
 import Model.Funcionario;
+import Model.FuncionarioDAO;
 import Model.Usuario;
+import Model.UsuarioDAO;
 import View.Login;
 import View.TelaCadastro;
 import View.TelaUsuario;
@@ -77,6 +77,10 @@ public class CadastrarController implements ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null,"Selecione uma opção");
 			}
+		}else if(e.getActionCommand().equals("Voltar")) {
+			Login login = new Login();
+			login.getFrame().setVisible(true);
+			telaCadastro.getFrame().dispose();
 		}
 
 	}

@@ -9,8 +9,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import Model.Produto;
+import Model.Session;
 import Model.Usuario;
-import Util.Session;
 import View.TelaFinalizar;
 import View.TelaUsuario;
 
@@ -28,7 +28,7 @@ public class FinalizarController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Comprar")) {
-			int dialogResult = JOptionPane.showConfirmDialog (null, "Deseja deletar finalizar a compra no valor de " + total + "?","Finalizar Compra",JOptionPane.YES_NO_OPTION);
+			int dialogResult = JOptionPane.showConfirmDialog (null, "Deseja finalizar a compra no valor de " + total + "?","Finalizar Compra",JOptionPane.YES_NO_OPTION);
 			if(dialogResult == JOptionPane.YES_OPTION) {
 				Session.getInstance().getUser().getProdutos().clear();
 				JOptionPane.showMessageDialog(null,"Agradecemos a preferência. Volte sempre.");

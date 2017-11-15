@@ -1,11 +1,12 @@
-package br.inatel.dell;
+package Controller;
+
+import View.Login;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Hello Quem?");
-		System.out.println("Pedro");
+		Login login = new Login();
+		login.getFrame().setVisible(true);
 	}
-
 }

@@ -1,4 +1,4 @@
-package DAO;
+package Model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,8 +9,6 @@ import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 import Controller.DBConnection;
-import Model.Produto;
-import Model.Usuario;
 
 public class UsuarioDAO {
 	Connection connection;

@@ -7,13 +7,14 @@ import javax.swing.JOptionPane;
 
 import com.mysql.jdbc.Connection;
 
-import DAO.FuncionarioDAO;
-import DAO.UsuarioDAO;
 import Model.Funcionario;
+import Model.FuncionarioDAO;
+import Model.Session;
 import Model.Usuario;
-import Util.Session;
+import Model.UsuarioDAO;
 import View.Login;
 import View.TelaAdmin;
+import View.TelaAjuda;
 import View.TelaCadastro;
 import View.TelaUsuario;
 import View.TelaFuncionario;
@@ -33,7 +34,7 @@ public class LoginController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getActionCommand().equals("Entrar")){
+		if(e.getActionCommand().equals("Entrar") || e.getActionCommand().equals("Enter")){
 			String login = loginView.getTextFieldLogin().getText();
 			String senha = loginView.getTextFieldSenha().getText();
 			
@@ -77,6 +78,10 @@ public class LoginController implements ActionListener{
 		}else if(e.getActionCommand().equals("Cadastrar")) {
 			TelaCadastro telaCadastro = new TelaCadastro();
 			telaCadastro.getFrame().setVisible(true);
+			loginView.getFrame().dispose();
+		}else if(e.getActionCommand().equals("Ajuda")) {
+			TelaAjuda telaAjuda = new TelaAjuda();
+			telaAjuda.getFrame().setVisible(true);
 			loginView.getFrame().dispose();
 		}
 	}

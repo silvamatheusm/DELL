@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import DAO.UsuarioDAO;
+import Model.Session;
 import Model.Usuario;
-import Util.Session;
+import Model.UsuarioDAO;
 import View.TelaMeuPerfil;
 import View.TelaUsuario;
 
@@ -33,6 +33,11 @@ public class MeuPerfilController implements ActionListener  {
 			String endereco = telaMeuPerfil.getTextFieldEndereco().getText();
 			String telefone = telaMeuPerfil.getTextFieldTel().getText();
 			String cpf = telaMeuPerfil.getTextFieldCpf().getText();
+			
+			if(nome.isEmpty() || endereco.isEmpty() || telefone.isEmpty() || cpf.isEmpty() || senha.isEmpty()) {
+				JOptionPane.showMessageDialog(null,"Preencha todos os campos");
+				return;
+			}
 
 			Usuario usuarioEditado = new Usuario();
 			usuarioEditado.setNome(nome);
